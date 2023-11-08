@@ -13,8 +13,13 @@ func main() {
 		fmt.Scan(&items[i])
 	}
 
-	fmt.Print(items[n-1], " ")
-	for i := 0; i<n-1; i++ {
-		fmt.Print(items[i], " ")
+	res := make([]int, 1, n)
+	res[0] = items[n-1]
+	res = append(res, items...)
+
+	items = nil
+
+	for i := 0; i<n; i++ {
+		fmt.Print(res[i], " ")
 	}
 }
