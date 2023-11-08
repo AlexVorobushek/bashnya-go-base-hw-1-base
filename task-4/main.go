@@ -2,8 +2,18 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
+
+func isSimmetry(items []int, n int) bool{
+	for i:=0; i<n+1; i++{
+		for j:=i+1; j < n; j++{
+			if items[n*i+j]!=items[n*j+i]{
+				return false
+			}
+		}
+	}
+	return true
+}
 
 func main() {
 	var n int
@@ -14,14 +24,9 @@ func main() {
 		fmt.Scan(&items[i])
 	}
 
-	for i:=0; i<n+1; i++{
-		for j:=i+1; j < n; j++{
-			if items[n*i+j]!=items[n*j+i]{
-				fmt.Println("no")
-				os.Exit(0)
-			}
-		}
+	if isSimmetry(items, n){
+		fmt.Println("yes")
+	} else {
+		fmt.Println("no")
 	}
-
-	fmt.Println("yes")
 }
