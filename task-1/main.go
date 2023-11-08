@@ -1,14 +1,13 @@
 package main
 
 import (
-  "fmt"
-  "math"
+	"fmt"
+	"math"
 )
 
 func main() {
-  var a, b float64
-  fmt.Println("math.Sqrt(c)")
-  fmt.Scan(&a)
-  fmt.Scan(&b)
-  fmt.Println(math.Sqrt(math.Pow(a, 2) + math.Pow(b, 2)))
+	var a, b float64
+	fmt.Scan(&a)
+	fmt.Scan(&b)
+	fmt.Println(math.Hypot(a, b))
 }
