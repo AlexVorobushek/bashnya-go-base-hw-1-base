@@ -2,17 +2,12 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
 	var s string
 	fmt.Scan(&s)
-
-	for _, ch := range s{
-		if ch=='1'{
-			fmt.Print("one")
-		} else{
-			fmt.Printf("%c", ch)
-		}
-	}
+	s = strings.Replace(s, "1", "one", -1)
+	fmt.Println(s)
 }
